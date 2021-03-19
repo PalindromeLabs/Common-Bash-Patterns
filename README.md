@@ -235,6 +235,11 @@ character.
 ```
 # Using delimiter " ", cut the first word of each line
 ls -l /var/log/ | cut -d " " -f 1
+# A range of data to cut using this delimiter can be specified
+ls -l /var/log/ | cut -d " " -f 1-3
+# To cut all text after the 4th word of a line, use
+# an open-ended hyphen to indicate a range
+ls -l /var/log/ | cut -d " " -f 4-
 ```
 
 ## Parsing columns right to left (for example, to extract file types)
