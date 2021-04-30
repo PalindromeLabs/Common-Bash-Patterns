@@ -70,6 +70,31 @@ Some useful special variables are:
 - `$1`, `$2`, `$n`, etc.: the value of the nth argument provided to the bash
 command or function. Useful in functions that accept inputs.
 
+## Check if variable is null or empty
+
+See `man test` for additional logic tests and explanations.
+Technically there's some distinction between a variable being unset vs. null,
+(`foo=` vs. `foo=""`), but this distinction usually doesn't matter in practice.
+
+```
+z_test_variable="Not an empty variable"
+if [ -z "$z_test_variable" ]; then
+      echo "the length of z_test_variable is zero"
+else
+      echo "the length of z_test_variable is not zero"
+fi
+```
+
+
+```
+n_test_variable="Not an empty variable"
+if [ -n "$n_test_variable" ]; then
+      echo "the length of n_test_variable is not zero"
+else
+      echo "the length of n_test_variable is zero"
+fi
+```
+
 ## Creating an array from a string
 
 ```
